@@ -1,4 +1,4 @@
-type Source = {
+export type Source = {
   id: string;
   name: string;
 };

@@ -1,7 +1,7 @@
 import './news.css';
 import { NewsData } from '../../../types/types';
 
-function safeQuerySelector<T extends HTMLElement>(
+export function safeQuerySelector<T extends HTMLElement>(
   selector: string,
   parentElement: DocumentFragment | Document = document
 ): T {
