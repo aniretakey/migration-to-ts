@@ -13,3 +13,10 @@ export interface NewsData {
   url: string;
   urlToImage: string;
 }
+
+export interface NewsStatus {
+  articles: NewsData[];
+  status: string;
+  totalResults: number;
+  sources?: Source[];
+}
