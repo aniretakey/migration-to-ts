@@ -12,7 +12,6 @@ class Sources {
     }
 
     data.forEach((item) => {
-      console.log(item.name, item.id);
       const sourceClone: Node = sourceItemTemp.content.cloneNode(true);
 
       if (!(sourceClone instanceof DocumentFragment)) {
