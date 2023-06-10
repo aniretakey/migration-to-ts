@@ -12,19 +12,21 @@ class Sources {
     }
 
     data.forEach((item) => {
+      console.log(item.name, item.id);
       const sourceClone: Node = sourceItemTemp.content.cloneNode(true);
 
-      if (!(sourceClone instanceof HTMLElement)) {
-        safeQuerySelector<HTMLSpanElement>('.source__item-name').textContent = item.name;
-        safeQuerySelector<HTMLDivElement>('.source__item').setAttribute('data-source-id', item.id);
+      if (!(sourceClone instanceof DocumentFragment)) {
+        throw new Error('Error: sourceClone is not instanceof DocumentFragment');
       }
+
+      safeQuerySelector<HTMLSpanElement>('.source__item-name', sourceClone).textContent = item.name;
+      safeQuerySelector<HTMLDivElement>('.source__item', sourceClone).setAttribute('data-source-id', item.id);
 
       fragment.append(sourceClone);
     });
-  }
 
-  safeQuerySelector('.sources', document: Document).append(fragment: DocumentFragment);
-  // document.querySelector('.sources').append(fragment);
+    safeQuerySelector<HTMLElement>('.sources', document).append(fragment);
+  }
 }
 
 export default Sources;
