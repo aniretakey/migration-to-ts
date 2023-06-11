@@ -11,7 +11,7 @@ class Loader {
 
   public getResp(
     { endpoint, options = {} }: { endpoint: string; options?: Options },
-    callback = (): void => {
+    callback: Callback = (): void => {
       console.error('No callback for GET response');
     }
   ): void {

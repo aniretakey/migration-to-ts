@@ -12,10 +12,12 @@ export interface NewsData {
   title: string;
   url: string;
   urlToImage: string;
+  articles?: NewsData[];
+  sources?: Source[];
 }
 
 export interface NewsStatus {
-  articles: NewsData[];
+  articles?: NewsData[];
   status: string;
   totalResults: number;
   sources?: Source[];
@@ -34,4 +36,6 @@ export type Options = {
   apiKey?: string;
 };
 
-export type Callback = <T>(data?: T) => void;
+export type Data = NewsStatus | NewsData;
+
+export type Callback = (data: Data) => void;
