@@ -20,3 +20,18 @@ export interface NewsStatus {
   totalResults: number;
   sources?: Source[];
 }
+
+export interface Endpoints {
+  status: string | number;
+  articles: NewsData;
+  totalResults?: number;
+  ok?: boolean;
+  statusText?: string;
+}
+
+export type Options = {
+  sources?: string | undefined;
+  apiKey?: string;
+};
+
+export type Callback = <T>(data?: T) => void;
