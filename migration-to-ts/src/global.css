@@ -73,6 +73,9 @@ footer .copyright:before {
 }
 
 .news {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
   width: 75%;
 }
 
