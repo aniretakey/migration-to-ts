@@ -2,10 +2,6 @@ import './news.css';
 import { NewsData } from '../../../types/types';
 import imgPlaceholder from '../../../assets/img_news.jpg';
 
-const placeholder = new Image();
-placeholder.src = imgPlaceholder;
-placeholder.alt = 'News image';
-
 export function safeQuerySelector<T extends HTMLElement>(
   selector: string,
   parentElement: DocumentFragment | Document = document
@@ -38,7 +34,7 @@ class News {
       }
 
       safeQuerySelector<HTMLDivElement>('.news__meta-photo', newsClone).style.backgroundImage = `url(${
-        item.urlToImage || placeholder
+        item.urlToImage || imgPlaceholder
       })`;
       safeQuerySelector<HTMLLIElement>('.news__meta-author', newsClone).textContent = item.author || item.source.name;
       safeQuerySelector<HTMLLIElement>('.news__meta-date', newsClone).textContent = item.publishedAt
