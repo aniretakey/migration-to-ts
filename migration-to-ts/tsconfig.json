@@ -8,5 +8,5 @@
     "allowJs": true,
     "outDir": "./dist"
   },
-  "files": ["src/index.ts"]
+  "files": ["src/index.ts", "index.d.ts"]
 }

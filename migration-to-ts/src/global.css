@@ -20,19 +20,39 @@ footer {
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  background-color: #555;
 }
+
+.footer__link {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: rgb(255, 137, 210);
+}
+
+.footer__image {
+  width: 100px;
+  height: 100px;
+}
+
 footer .copyright {
   font-size: 14px;
-  color: #333;
+  color: white;
   text-align: center;
 }
+
 footer .copyright a {
-  color: #444;
+  color: white;
 }
+
 footer .copyright a:hover {
-  color: #555;
+  color: rgb(255, 137, 210);
 }
+
 footer .copyright:before {
   content: '©';
 }
