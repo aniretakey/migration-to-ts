@@ -39,3 +39,8 @@ export type Options = {
 export type Data = NewsStatus | NewsData;
 
 export type Callback = (data: Data) => void;
+
+export enum httpStatus {
+  unauthorized = 401,
+  notFound = 404,
+}
