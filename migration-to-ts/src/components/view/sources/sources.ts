@@ -1,5 +1,5 @@
 import './sources.css';
-import { safeQuerySelector } from '../news/news';
+import { safeQuerySelector } from '../../../helpers/dom-utils';
 import { Source } from '../../../types/types';
 
 class Sources {

@@ -1,6 +1,6 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
-import { safeQuerySelector } from '../../components/view/news/news';
+import { safeQuerySelector } from '../../helpers/dom-utils';
 
 class App {
   private controller: AppController;
