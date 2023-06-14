@@ -11,7 +11,7 @@ class App {
   }
 
   public start(): void {
-    if (document && document !== null) {
+    if (document) {
       safeQuerySelector('.sources', document).addEventListener('click', (e) =>
         this.controller.getNews(e, (data) => {
           this.view.drawNews(data);
