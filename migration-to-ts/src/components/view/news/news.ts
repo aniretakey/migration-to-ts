@@ -4,7 +4,7 @@ import imgPlaceholder from '../../../assets/img_news.jpg';
 
 export function safeQuerySelector<T extends HTMLElement>(
   selector: string,
-  parentElement: DocumentFragment | Document = document
+  parentElement: DocumentFragment | Document | HTMLElement = document
 ): T {
   const elem = parentElement.querySelector<T>(selector);
 

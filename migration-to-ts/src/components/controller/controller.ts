@@ -12,7 +12,7 @@ class AppController extends AppLoader {
   }
 
   public getNews(e: Event, callback: Callback): void {
-    let target: EventTarget | null = e.target;
+    let { target } = e;
     const newsContainer = e.currentTarget;
 
     while (target !== newsContainer) {
