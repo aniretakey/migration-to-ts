@@ -16,15 +16,15 @@ export function safeQuerySelector<T extends HTMLElement>(
 
 class News {
   public draw(data: NewsData[] = []): void {
-    const news: NewsData[] = data.length >= 10 ? data.filter((_item: NewsData, idx: number) => idx < 10) : data;
-    const fragment: DocumentFragment = document.createDocumentFragment();
-    const newsItemTemp: HTMLTemplateElement | null = document.querySelector('#newsItemTemp');
+    const news = data.length >= 10 ? data.filter((_item: NewsData, idx: number) => idx < 10) : data;
+    const fragment = document.createDocumentFragment();
+    const newsItemTemp = document.querySelector<HTMLTemplateElement>('#newsItemTemp');
     if (!newsItemTemp) {
       throw new Error('Element #newsItemTemp not found');
     }
 
     news.forEach((item: NewsData, idx: number) => {
-      const newsClone: Node = newsItemTemp.content.cloneNode(true);
+      const newsClone = newsItemTemp.content.cloneNode(true);
 
       if (!(newsClone instanceof DocumentFragment)) {
         throw new Error('Error: newsClone is not instanceof DocumentFragment');
@@ -46,7 +46,7 @@ class News {
       safeQuerySelector<HTMLHeadingElement>('.news__description-title', newsClone).textContent = item.title;
       safeQuerySelector<HTMLHeadingElement>('.news__description-source', newsClone).textContent = item.source.name;
       safeQuerySelector<HTMLParagraphElement>('.news__description-content', newsClone).textContent = item.description;
-      safeQuerySelector<HTMLLinkElement>('.news__read-more a', newsClone).setAttribute('href', item.url);
+      safeQuerySelector<HTMLAnchorElement>('.news__read-more a', newsClone).setAttribute('href', item.url);
 
       fragment.append(newsClone);
     });
