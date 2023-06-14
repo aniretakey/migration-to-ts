@@ -44,3 +44,8 @@ export enum httpStatus {
   unauthorized = 401,
   notFound = 404,
 }
+
+export enum endpoints {
+  source = 'source',
+  everything = 'everything',
+}
