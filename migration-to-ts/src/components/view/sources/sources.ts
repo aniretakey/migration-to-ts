@@ -5,10 +5,10 @@ import { Source } from '../../../types/types';
 class Sources {
   public draw(data: Source[]): void {
     const fragment: DocumentFragment = document.createDocumentFragment();
-    const sourceItemTemp: HTMLTemplateElement | null = document.querySelector('#sourceItemTemp');
+    const sourceItemTemp = document.querySelector<HTMLTemplateElement>('#sourceItemTemp');
 
     if (!sourceItemTemp) {
-      throw new Error('Element #newsItemTemp not found');
+      throw new Error('Element #sourceItemTemp not found');
     }
 
     data.forEach((item) => {
@@ -26,7 +26,7 @@ class Sources {
       fragment.append(sourceClone);
     });
 
-    safeQuerySelector<HTMLElement>('.sources', document).append(fragment);
+    safeQuerySelector<HTMLDivElement>('.sources', document).append(fragment);
   }
 }
 
