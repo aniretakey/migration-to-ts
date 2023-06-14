@@ -1,17 +1,17 @@
 export type Source = {
-  id: string;
+  id: string | null;
   name: string;
 };
 
 export interface NewsData {
-  author: string;
+  author: string | null;
   content: string;
   description: string;
   publishedAt: string;
   source: Source;
   title: string;
   url: string;
-  urlToImage: string;
+  urlToImage: string | null;
   articles?: NewsData[];
   sources?: Source[];
 }
@@ -23,16 +23,16 @@ export interface NewsStatus {
   sources?: Source[];
 }
 
-export interface Endpoints {
-  status: string | number;
-  articles: NewsData;
-  totalResults?: number;
-  ok?: boolean;
-  statusText?: string;
-}
+// export interface Endpoints {
+//   status: string | number;
+//   articles: NewsData;
+//   totalResults?: number;
+//   ok?: boolean;
+//   statusText?: string;
+// }
 
 export type Options = {
-  sources?: string | undefined;
+  sources?: string;
   apiKey?: string;
 };
 

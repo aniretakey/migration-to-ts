@@ -19,7 +19,9 @@ class Sources {
       }
 
       safeQuerySelector<HTMLSpanElement>('.source__item-name', sourceClone).textContent = item.name;
-      safeQuerySelector<HTMLDivElement>('.source__item', sourceClone).setAttribute('data-source-id', item.id);
+      if (item.id !== null) {
+        safeQuerySelector<HTMLDivElement>('.source__item', sourceClone).setAttribute('data-source-id', item.id);
+      }
 
       fragment.append(sourceClone);
     });
