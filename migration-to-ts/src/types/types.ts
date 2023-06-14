@@ -46,6 +46,6 @@ export enum httpStatus {
 }
 
 export enum endpoints {
-  source = 'source',
+  source = 'sources',
   everything = 'everything',
 }
