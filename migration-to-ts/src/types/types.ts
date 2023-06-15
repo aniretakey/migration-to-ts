@@ -31,11 +31,6 @@ export interface NewsStatus {
 //   statusText?: string;
 // }
 
-export type Options = {
-  sources?: string;
-  apiKey?: string;
-};
-
 export type Data = NewsStatus | NewsData;
 
 export type Callback = (data: Data) => void;

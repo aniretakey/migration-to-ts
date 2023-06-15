@@ -1,16 +1,16 @@
-import { Options, Callback, httpStatus, httpMethods } from '../../types/types';
+import { Callback, httpStatus, httpMethods } from '../../types/types';
 
 class Loader {
   private baseLink: string;
-  private options: object;
+  private options: Record<string, string>;
 
-  constructor(baseLink: string, options: object) {
+  constructor(baseLink: string, options: Record<string, string>) {
     this.baseLink = baseLink;
     this.options = options;
   }
 
   public getResp(
-    { endpoint, options = {} }: { endpoint: string; options?: Options },
+    { endpoint, options = {} }: { endpoint: string; options?: Record<string, string> },
     callback: Callback = (): void => {
       console.error('No callback for GET response');
     }
