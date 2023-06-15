@@ -5,7 +5,8 @@ import { safeQuerySelector } from '../../../helpers/dom-utils';
 
 class News {
   public draw(data: NewsData[] = []): void {
-    const news = data.length >= 10 ? data.filter((_item: NewsData, idx: number) => idx < 10) : data;
+    const newsCount = 10;
+    const news = data.length >= newsCount ? data.filter((_item: NewsData, idx: number) => idx < newsCount) : data;
     const fragment = document.createDocumentFragment();
     const newsItemTemp = document.querySelector<HTMLTemplateElement>('#newsItemTemp');
     if (!newsItemTemp) {
