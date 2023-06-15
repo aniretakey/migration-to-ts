@@ -18,22 +18,12 @@ export interface NewsData {
 
 export interface NewsStatus {
   articles?: NewsData[];
-  status: string;
+  status: APIErrorResponse | APIErrorResponse;
   totalResults: number;
   sources?: Source[];
 }
 
-// export interface Endpoints {
-//   status: string | number;
-//   articles: NewsData;
-//   totalResults?: number;
-//   ok?: boolean;
-//   statusText?: string;
-// }
-
 export type Data = NewsStatus | NewsData;
-
-export type Callback = (data: Data) => void;
 
 export enum httpStatus {
   unauthorized = 401,
@@ -52,3 +42,20 @@ export enum httpMethods {
   PATCH = 'PATCH',
   DELETE = 'DELETE',
 }
+
+enum status {
+  ok = 'ok',
+  error = 'error',
+}
+
+export type APIErrorResponse = {
+  status: status.error;
+  code: string;
+  message: string;
+};
+
+export type APISuccessfulResponse = {
+  status: status.ok;
+};
+
+export type Callback<T> = (data: T) => void;
