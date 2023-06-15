@@ -1,4 +1,4 @@
-import { Options, Callback, httpStatus } from '../../types/types';
+import { Options, Callback, httpStatus, httpMethods } from '../../types/types';
 
 class Loader {
   private baseLink: string;
@@ -15,7 +15,7 @@ class Loader {
       console.error('No callback for GET response');
     }
   ): void {
-    this.load('GET', endpoint, callback, options);
+    this.load(httpMethods.GET, endpoint, callback, options);
   }
 
   private errorHandler(res: Response): Response {
@@ -41,7 +41,7 @@ class Loader {
     return url.slice(0, -1);
   }
 
-  private load(method: string, endpoint: string, callback: Callback, options = {}): void {
+  private load(method: httpMethods, endpoint: string, callback: Callback, options = {}): void {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res) => res.json())

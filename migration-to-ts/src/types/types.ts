@@ -49,3 +49,11 @@ export enum endpoints {
   source = 'sources',
   everything = 'everything',
 }
+
+export enum httpMethods {
+  POST = 'POST',
+  GET = 'GET',
+  PUT = 'PUT',
+  PATCH = 'PATCH',
+  DELETE = 'DELETE',
+}
