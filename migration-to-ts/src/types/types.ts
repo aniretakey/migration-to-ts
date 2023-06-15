@@ -35,12 +35,12 @@ export enum httpStatus {
   notFound = 404,
 }
 
-export enum endpoints {
+export enum Endpoints {
   source = 'sources',
   everything = 'everything',
 }
 
-export enum httpMethods {
+export enum HttpMethods {
   POST = 'POST',
   GET = 'GET',
   PUT = 'PUT',
@@ -48,19 +48,19 @@ export enum httpMethods {
   DELETE = 'DELETE',
 }
 
-enum status {
+enum Status {
   ok = 'ok',
   error = 'error',
 }
 
 export type APIErrorResponse = {
-  status: status.error;
+  status: Status.error;
   code: string;
   message: string;
 };
 
 export type APISuccessfulResponse = {
-  status: status.ok;
+  status: Status.ok;
 };
 
 export type Callback<T> = (data: T) => void;
