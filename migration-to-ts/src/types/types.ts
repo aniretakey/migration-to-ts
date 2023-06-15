@@ -30,7 +30,7 @@ export interface NewsStatus {
 
 export type Data = NewsStatus | NewsData;
 
-export enum httpStatus {
+export enum HttpStatus {
   unauthorized = 401,
   notFound = 404,
 }

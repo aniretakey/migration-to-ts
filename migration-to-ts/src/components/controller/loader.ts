@@ -1,4 +1,4 @@
-import { Callback, httpStatus, HttpMethods, NewsStatus, Endpoints } from '../../types/types';
+import { Callback, HttpStatus, HttpMethods, NewsStatus, Endpoints } from '../../types/types';
 
 class Loader {
   private baseLink: string;
@@ -20,7 +20,7 @@ class Loader {
 
   private errorHandler(res: Response): Response {
     if (!res.ok) {
-      if (res.status === httpStatus.unauthorized || res.status === httpStatus.notFound) {
+      if (res.status === HttpStatus.unauthorized || res.status === HttpStatus.notFound) {
         console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
       }
       throw Error(res.statusText);
